@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rest-api-config
+  labels:
+    app: rest-api-k8s
+data:
+  SPRING_PROFILES_ACTIVE: "k8s"
+  SERVER_PORT: "8080"
+  LOG_LEVEL: "INFO"
+  JPA_DDL_AUTO: "create-drop"
+  H2_CONSOLE_ENABLED: "false"
+  DATABASE_URL: "jdbc:h2:mem:k8sdb"
+  DATABASE_DRIVER: "org.h2.Driver"
+  DATABASE_USERNAME: "sa"
+  DATABASE_PASSWORD: ""
